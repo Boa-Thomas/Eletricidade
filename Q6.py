@@ -1,5 +1,6 @@
 import cmath
 import math
+from tkinter import W, Wm
 
 potencia = 375000
 vlinha = 2200
@@ -37,3 +38,62 @@ print("Z2 = ", Z2, "Ohm")
 
 Z1 = R1+complex(0,X1)
 print("Z1 = ", Z1, "Ohm")
+
+Zeq1 = Zn*Z2/(Zn+Z2)
+print("Zeq1 = ", Zeq1, "Ohm")
+
+Zeq2 = Z1+Zeq1
+print("Zeq2 = ", Zeq2, "Ohm")
+
+I1 = Vfreal/Zeq2
+print("I1 = ", I1, "A")
+
+print("B - Fator de pontecia")
+
+I1p = cmath.polar(I1)
+print("I1p = ", I1p)
+
+FP = cmath.cos(I1p[1])
+print("FP = ", FP)
+
+print("C - Potencia de entrada")
+Pe = 3*Vfreal*I1p[0]*cmath.cos(I1p[1])
+Pereal = round(Pe.real,3)
+print("Pe = ", Pereal, "W")
+
+print("D - Corrente de saida")
+E1 = Vfreal - Z1*I1
+print("E1 = ", E1, "V")
+
+I2L = E1/Z2
+print("I2L = ", I2L, "A")
+
+print("E - Potencia de saida")
+I2Lp = cmath.polar(I2L)
+
+Ps= 3*(1-s)*(R2L/s)*I2Lp[0]*I2Lp[0]
+Psreal = round(Ps.real,3)
+print("Ps = ", Psreal, "W")
+
+print("F - Velocidade da carga")
+ns = 120*freq/polos
+print("ns = ", ns, "rpm")
+
+ws = ns*2*math.pi/60
+ws = round(ws,3)
+print("ws = ", ws, "rad/s")
+
+n = (1-s)*ns
+print("n = ", n, "rpm")
+
+w=2*math.pi*n/60
+w = round(w,3)
+print("w = ", w, "rad/s")
+
+print("G - Torque na carga")
+Td = Ps/w
+print("Td = ", Td, "Nm")
+
+print("H - Rendimento")
+eni = Ps/Pe*100
+print("eni = ", eni, "%")
