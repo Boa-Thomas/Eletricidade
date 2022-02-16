@@ -1,5 +1,6 @@
 import cmath
 import math
+from tkinter import W
 
 
 polos = 8
@@ -47,24 +48,32 @@ print("I1 RECT= ", I1)
 I1p = cmath.polar(I1)
 print("I1 POLAR= ", I1p)
 
-print("\nAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+print("\nA - a corrente de entrada\n")
 Zeq = (Zs*Zp)/(Zs+Zp)
 print("Zeq RECT= ", Zeq)
 cmath.polar(Zeq)
 print("Zeq POLAR= ", Zeq)
 
-print("\nBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+print("\nB - A potencia consumida da rede\n")
 p1 = 3*t2*I1p[0]*cmath.cos(I1p[1])
-print("p1 = ", p1.real,"W")
+p1real = round(p1.real,4)
+print("p1 = ", p1real,"W")
 
-print("\nCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC")
+print("\nC - A potencia no eixo da maquina\n")
 p2 = 3*(1-s)*(r2L/s)*(I2p[0])*(I2p[0])
+p2 = round(p2,4)
 print("p2 =", p2,"W")
 
-print("\nDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD")
+print("\nD - O torque no eixo da maquina\n")
 w = 2*cmath.pi*rpm/freq
+w = round(w,4)
 print("w = ", w,"rad/s")
 
-print("\nEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
-eni = (p2/p1.real)*100
+t=p2/w
+t = round(t,4)
+print("t = ", t,"N.m")
+
+print("\nE - rendimento\n")
+eni = (p2/p1real)*100
+eni = round(eni,4)
 print("eni = ", eni,"%")

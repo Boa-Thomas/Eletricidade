@@ -10,11 +10,11 @@ perdarotacional=192
 potenciaentreferro=10975
 frequenciamotor=1.5
 
-print("A - o escorregamento do rotor")
+print("\nA - o escorregamento do rotor\n")
 s = frequenciamotor/freq
 print("s = ", s,"%")
 
-print("B - A velocidade sí ncrona e a velocidade do rotor em rpm e em rad/s")
+print("\nB - A velocidade sí ncrona e a velocidade do rotor em rpm e em rad/s\n")
 ns = 120*freq/polos
 print("ns = ", ns,"rpm")
 
@@ -29,14 +29,14 @@ w = 2*math.pi*n/60
 w = round(w,5)
 print("w = ", w,"rad/s")
 
-print("C - A potencia no eixo do motor (potencia de saída)")
+print("\nC - A potencia no eixo do motor (potencia de saída)\n")
 Pd = potenciaentreferro*(1-s)
 print("Pd = ", Pd,"W")
 
 Ps = Pd-perdarotacional
 print("Ps = ", Ps,"W")
 
-print("D - A eficiencia (rendimento) do motor para as condiçoes apresentadas")
+print("\nD - A eficiencia (rendimento) do motor para as condiçoes apresentadas\n")
 Pe = potenciaentreferro+perdarotacional+perdarolamento
 print("Pe = ", Pe,"W")
 
@@ -44,7 +44,7 @@ eni = (Ps/Pe)*100
 eni = round(eni,5)
 print("eni = ", eni,"%")
 
-print("E - O torque no eixo do motor")
+print("\nE - O torque no eixo do motor\n")
 T = 3*Ps/w
 T = round(T,5)
 print("T = ", T,"N.m")
