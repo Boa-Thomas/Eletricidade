@@ -15,7 +15,7 @@ Rp = 42
 Xm = 5.4
 
 print("Considere que o motor é alimentado com tensão de fase igual a 254 V, conexão Y e atinge escorregamento igual a 1,8%")
-print("A - Corrente no estator")
+print("\nA - Corrente no estator\n")
 s = 0.018
 
 print("R2L_s = ", R2L/s, "Ohm")
@@ -42,13 +42,13 @@ print("I1 = ", I1, "A")
 
 I1p = cmath.polar(I1)
 
-print("B - Fator de pontecia")
+print("\nB - Fator de pontecia\n")
 
 FP = cmath.cos(I1p[1])
 FPreal = round(FP.real,3)
 print("FP = ", FPreal)
 
-print("C - Potencia de entrada")
+print("\nC - Potencia de entrada\n")
 Pe = t2*I1p[0]*cmath.cos(I1p[1])
 pereal = round(Pe.real,3)
 print("Pe = ", pereal, "W")
@@ -56,7 +56,7 @@ print("Pe = ", pereal, "W")
 Pe3 = 3*pereal
 print("Pe3 = ", Pe3, "W")
 
-print("D - Corrente no rotor")
+print("\nD - Corrente no rotor\n")
 
 E1 = t2-Z1*I1
 E1p = cmath.polar(E1)
@@ -66,7 +66,7 @@ I2L = E1/Z2
 I2Lp = cmath.polar(I2L)
 print("I2L = ", I2Lp, "A")
 
-print("E - Potencia na carga")
+print("\nE - Potencia na carga\n")
 #professor ultiliza dados polares
 Ps = ((R2L*(1-s))/s)*I2Lp[0]*I2Lp[0]
 print("Ps = ", Ps, "W")
@@ -74,7 +74,7 @@ print("Ps = ", Ps, "W")
 Ps3 = 3*Ps
 print("Ps3 = ", Ps3, "W")
 
-print("F - Velocidade do eixo")
+print("\nF - Velocidade do eixo\n")
 ns = 120*freq/polos
 print("ns = ", ns, "rpm")
 
@@ -85,11 +85,11 @@ w = 2*math.pi*n/60
 w = round(w,3)
 print("w = ", w, "rad/s")
 
-print("G - Torque na carga")
+print("\nG - Torque na carga\n")
 
 t = Ps3/w
 print("t = ", t, "Nm")
 
-print("H - Rendimento do motor")
+print("\nH - Rendimento do motor\n")
 eni = Ps3/Pe3*100
 print("eni = ", eni, "%")

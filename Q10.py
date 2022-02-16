@@ -16,7 +16,7 @@ s = 0.05
 perdas_nucleo = 24
 perdas_vestilacao_atrito = 13
 
-print("A - Corrente no Estator")
+print("\nA - Corrente no Estator\n")
 
 z1 = complex(r1, x1)
 print("z1 = ", z1,"Ohms")
@@ -35,17 +35,17 @@ I1 = t1/zeq
 print("I1 = ", I1,"A")
 
 I1p = cmath.polar(I1)
-print("B - Fator de potencia")
+print("\nB - Fator de potencia\n")
 
 FP = cmath.cos(I1p[1])
 FPreal = round(FP.real,3)
 print("FP = ", FPreal)
 
-print("C - Potencia de entrada")
+print("\nC - Potencia de entrada\n")
 P1 = t1*I1p[0]*FPreal
 print("P1 = ", P1,"W")
 
-print("D - Potencia de saída")
+print("\nD - Potencia de saída\n")
 
 I2d = I1*((complex(0,0.5)*xm)/(complex(0,0.5*xm)+(0.5*(r2/s)+complex(0,0.5)*x2)))
 print("I2d = ", I2d,"A")
@@ -58,7 +58,7 @@ print("Pcd = ", Pcd,"W")
 
 Pco = (0.5*r2*(1-s)/(2-s))*cmath.polar(I2o)[0]*cmath.polar(I2o)[0]
 Pco = -Pco
-print("A potencia em oposiça o e negativa em virtude de o campo ser em oposiça o ao campo direto")
+print("A potencia em oposiçao e negativa em virtude de o campo ser em oposiçao ao campo direto")
 Pco = round(Pco,4)
 print("Pco = ", Pco,"W")
 
@@ -74,12 +74,12 @@ P2h = P2/746
 P2h = round(P2h,4)
 print("P2 = ", P2h,"hp")
 
-print("E - Rendimento")
+print("\nE - Rendimento\n")
 eni = P2/P1*100
 eni = round(eni,4)
 print("eni = ", eni,"%")
 
-print("F - Velocidade no eixo")
+print("\nF - Velocidade no eixo\n")
 ns = 120*freq/polos
 print("ns = ", ns,"rpm")
 
@@ -92,7 +92,7 @@ print("n = ", n,"rpm")
 w = ws*(1-s)
 print("w = ", w,"rad/s")
 
-print("G - Torque na carga")
+print("\nG - Torque na carga\n")
 t = P2/w
 t = round(t,4)
 print("t = ", t,"Nm")
