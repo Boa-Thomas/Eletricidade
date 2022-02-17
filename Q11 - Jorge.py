@@ -3,16 +3,16 @@ import math
 
 cv = 3
 t1 = 220
-polos = 6
+polos = 4
 freq = 60
-r1 = 1.12
-r2 = 1.89
-x1 = 2.23
+r1 = 1.22
+r2 = 1.82 
+x1 = 2.12
 x2 = 2.12
-rp = 105
-xm = 95.4
-s = 0.035
-perda_vent_atrt = 32
+rp = 95
+xm = 98
+s = 0.025
+perda_vent_atrt = 25
 
 print("\nA - Corrente no Estator\n")
 

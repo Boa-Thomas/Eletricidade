@@ -1,18 +1,18 @@
 import cmath
 import math
 
-cv =100
+cv =150
 cvconv = 736
 t1 =440
 t2 = 254
-polos = 4
+polos = 10
 freq = 60
-r1 = 0.019
-R2L = 0.029
-X1 = 0.12
+r1 = 0.012
+R2L = 0.018
+X1 = 0.08
 X2L = X1
-Rp = 42
-Xm = 5.4
+Rp = 58
+Xm = 54
 
 print("\nConsidere que o motor é alimentado com tensão de fase igual a 254 V, conexão Y e atinge escorregamento igual a 1,8%")
 print("\nA - Corrente no estator\n")
