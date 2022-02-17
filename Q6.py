@@ -16,7 +16,7 @@ R2L = 0.2
 X1 = 2.0
 X2L = X1
 s = 0.02 #escorregamento
-print("Corrente no estator")
+print("\nA - Corrente no estator\n")
 
 Vf = vlinha/cmath.sqrt(3)
 Vfreal = round(Vf.real,3)
@@ -48,7 +48,7 @@ print("Zeq2 = ", Zeq2, "Ohm")
 I1 = Vfreal/Zeq2
 print("I1 = ", I1, "A")
 
-print("B - Fator de pontecia")
+print("\nB - Fator de pontecia\n")
 
 I1p = cmath.polar(I1)
 print("I1p = ", I1p)
@@ -56,26 +56,26 @@ print("I1p = ", I1p)
 FP = cmath.cos(I1p[1])
 print("FP = ", FP)
 
-print("C - Potencia de entrada")
+print("\nC - Potencia de entrada\n")
 Pe = 3*Vfreal*I1p[0]*cmath.cos(I1p[1])
 Pereal = round(Pe.real,3)
 print("Pe = ", Pereal, "W")
 
-print("D - Corrente de saida")
+print("\nD - Corrente de saida\n")
 E1 = Vfreal - Z1*I1
 print("E1 = ", E1, "V")
 
 I2L = E1/Z2
 print("I2L = ", I2L, "A")
 
-print("E - Potencia de saida")
+print("\nE - Potencia de saida\n")
 I2Lp = cmath.polar(I2L)
 
 Ps= 3*(1-s)*(R2L/s)*I2Lp[0]*I2Lp[0]
 Psreal = round(Ps.real,3)
 print("Ps = ", Psreal, "W")
 
-print("F - Velocidade da carga")
+print("\nF - Velocidade da carga\n")
 ns = 120*freq/polos
 print("ns = ", ns, "rpm")
 
@@ -90,7 +90,7 @@ w=2*math.pi*n/60
 w = round(w,3)
 print("w = ", w, "rad/s")
 
-print("G - Torque na carga")
+print("\nG - Torque na carga\n")
 Td = Ps/w
 print("Td = ", Td, "Nm")
 

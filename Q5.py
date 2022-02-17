@@ -11,7 +11,7 @@ X2L = X1
 Rp = 130
 Xm = 12.25
 
-print("O rendimento a plena carga com escorregamento de 2,5%.\n")
+print("\nA - O rendimento a plena carga com escorregamento de 2,5%.\n")
 
 s = 0.025
 v1 = vlinha/cmath.sqrt(3)
@@ -34,7 +34,7 @@ I1 = v1real/Zeq
 print("I1 = ", I1, "A")
 I1p = cmath.polar(I1)
 
-print("Com I1 calculado pode-se encontrar a potencia de entrada P1")
+print("\nCom I1 calculado pode-se encontrar a potencia de entrada P1\n")
 
 p1= 3*v1real*I1p[0]*cmath.cos(I1p[1])
 p1real = round(p1.real,3)
@@ -57,14 +57,14 @@ eni = p2real/p1real*100
 eni = round(eni,3)
 print("eni = ", eni, "%")
 
-print("O torque nesta condiçao. \nA velocidade sí ncrona e a rotaça o do motor sa o calculadas por:")
+print("\nB - O torque nesta condiçao. \nA velocidade sí ncrona e a rotaça o do motor sa o calculadas por:\n")
 ns = 120*freq/polos
 print("ns = ", ns, "rpm")
 
 n = (1-s)*ns
 print("n = ", n, "rpm")
 
-print("A velocidade angular do motor sera :")
+print("\nA velocidade angular do motor sera :\n")
 
 w= n*2*math.pi/60
 w = round(w,3)
