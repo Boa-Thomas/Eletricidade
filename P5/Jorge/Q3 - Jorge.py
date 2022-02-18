@@ -13,7 +13,7 @@ frequenciamotor=1.8
 
 print("\nA - o escorregamento do rotor\n")
 s = frequenciamotor/freq
-print("s = ", s,"%")
+print("s = ", s,)
 
 print("\nB - A velocidade sí ncrona e a velocidade do rotor em rpm e em rad/s\n")
 ns = 120*freq/polos

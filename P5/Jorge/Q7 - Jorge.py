@@ -45,7 +45,7 @@ I1p = cmath.polar(I1)
 print("\nB - Fator de pontecia\n")
 
 FP = cmath.cos(I1p[1])
-FPreal = round(FP.real,3)
+FPreal = round(FP.real,4)
 print("FP = ", FPreal)
 
 print("\nC - Potencia de entrada\n")
