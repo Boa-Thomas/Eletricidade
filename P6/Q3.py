@@ -39,7 +39,8 @@ print("\n\nB - Angulo de carga:\n")
 print("§",Ea_p[1]*180/cmath.pi,"°")
 
 
-print("\n\nC - A pote ncia trifa sica desenvolvida pelo gerador em watts:\n")
-##
-pd = ((Ea[0]*vt.real)/Reatancia_sync)*|-1|
-print("pd",pd,"W")
+print("\n\nC - A potencia trifasica desenvolvida pelo gerador em watts:\n")
+pd = ((Ea_p[0]*vt.real)/Reatancia_sync)*cmath.sqrt((cmath.sin(Ea_p[1]))*(cmath.sin(Ea_p[1])))
+print("pd por fase",pd.real,"W")
+print("pd trifasico",pd.real*3,"W")
+
