@@ -1,6 +1,6 @@
 import math
 import cmath
-from tkinter import END
+import numpy
 
 
 Va = 350000000
@@ -19,10 +19,31 @@ print("P1f = ", P1f,"W")
 S1f = P1f/FP
 print("S1f = ", S1f,"VA")
 
-Vtp = t1/cmath.sqrt(3)
-print("Vt = ", Vtp,"V")
+Vt = t1/cmath.sqrt(3)
+print("Vt = ", Vt.real,"V")
 
-Ia = S1f/Vtp
-print("Ia = ", Ia,"A")
+Ia_mod = S1f/Vt
+print("Ia = ", Ia_mod.real,"A")
+Ia_ang = cmath.acos(FP)
+print("Ia = ", Ia_ang.real,"rad\n",Ia_ang.real*180/math.pi,"°")
 
-Ia_polar = [Ia.real,cmath.acos(FP)]
+
+print("\n\nB - Tensao Induzida na armadura:\n")
+
+vtp = [Vt.real,0]
+Iap = [Ia_mod.real,Ia_ang.real]
+comp = cmath.polar(complex(Ra,Xa))[0]
+comp2 = cmath.polar(complex(Ra,Xa))[1]
+compf = [comp,comp2]
+print(compf)
+print(Iap)
+
+#ea = numpy.convolve(compf,Iap)+vtp
+#print("ea = ", ea,"V")
+
+#Ea = Vt+complex(Ra,Xa)*Ia
+
+
+
+
+
