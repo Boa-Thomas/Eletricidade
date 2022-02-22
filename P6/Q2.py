@@ -30,20 +30,32 @@ print("Ia = ", Ia_ang.real,"rad\n",Ia_ang.real*180/math.pi,"°")
 
 print("\n\nB - Tensao Induzida na armadura:\n")
 
-vtp = [Vt.real,0]
-Iap = [Ia_mod.real,Ia_ang.real]
-comp = cmath.polar(complex(Ra,Xa))[0]
-comp2 = cmath.polar(complex(Ra,Xa))[1]
-compf = [comp,comp2]
-print(compf)
-print(Iap)
-
-#ea = numpy.convolve(compf,Iap)+vtp
-#print("ea = ", ea,"V")
-
-#Ea = Vt+complex(Ra,Xa)*Ia
+Ia_Rect =cmath.rect(Ia_mod.real, -Ia_ang.real)
+print("Ia_rect = ", Ia_Rect,"A")
+Vt_Rect = cmath.rect(Vt.real, 0)
+print("Vt_rect = ", Vt_Rect,"V")
 
 
+Ea = Vt_Rect + (complex(Ra,Xa)*Ia_Rect)
+Eap = cmath.polar(Ea)
+print("Ea = ", Eap,"V")
+
+print("\n\nC - Ângulo da carga:\n")
+
+print("§ = ", Eap[1]*180/math.pi,"°")
+
+print("\n\nD - Regulação de tensão percentual:\n")
+
+R_por = ((Eap[0]-Vt.real)/Vt.real)*100
+print("R% = ", R_por,"%")
+
+print("\n\nE - Velocidade no eixo do gerador:\n")
+
+ns = 120*freq/polos
+print("ns = ", ns,"RPM")
+
+ws = 2*math.pi*ns/60
+print("ws = ", ws,"rad/s")
 
 
 
