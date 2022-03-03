@@ -2,12 +2,12 @@ import math
 import cmath
 
 #gerador
-potencia = 800000
+potencia = 150000
 #rotor cilindrico
-T_linha = 11000
+T_linha = 220
 #estrela
-R_armadura = 1.5
-Reatancia_sync = 25 #por fase
+R_armadura = 0.12
+Reatancia_sync = 1.25 #por fase
 carga = 600000
 FP = 0.8
 
@@ -43,7 +43,4 @@ print("\n\nC - A potencia trifasica desenvolvida pelo gerador em watts:\n")
 pd = ((Ea_p[0]*vt.real)/Reatancia_sync)*cmath.sqrt((cmath.sin(Ea_p[1]))*(cmath.sin(Ea_p[1])))
 print("pd por fase",pd.real,"W")
 print("pd trifasico",pd.real*3,"W")
-print("\nFormula alternativa\n")
-pd = vt.real*Ia.real*FP
-print("pd por fase",pd.real,"W")
 

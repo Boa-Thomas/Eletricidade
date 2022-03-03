@@ -3,14 +3,14 @@ import cmath
 import numpy
 
 
-Va = 350000000
-t1 = 25000
+Va = 300000000
+t1 = 3800
 freq = 60
-polos = 4
-Xa = 3.25
-Ra = 0.25
-Carga_3f = 300000000
-FP = 0.9
+polos = 2
+Xa = 0.0075
+Ra = 0.0032
+Carga_3f = 250000000
+FP = 0.85
 
 print("\n\nA - Corrente de armadura:\n")
 P1f = Carga_3f/3

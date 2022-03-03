@@ -2,13 +2,13 @@ import math
 import cmath
 
 #gerador
-potencia = 800000
+potencia = 15000
 #rotor cilindrico
-T_linha = 11000
+T_linha = 220
 #estrela
-R_armadura = 1.5
-Reatancia_sync = 25 #por fase
-carga = 600000
+R_armadura = 0.12
+Reatancia_sync = 1.25 #por fase
+carga = 15000
 FP = 0.8
 
 print("\n\nA - Regulação de tensão percentual:\n")

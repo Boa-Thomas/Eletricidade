@@ -3,14 +3,14 @@ import cmath
 import numpy
 
 
-Va = 350000000
-t1 = 25000
-freq = 60
+Va = 150000000
+t1 = 3800
+freq = 50
 polos = 4
-Xa = 3.25
+Xa = 1.5
 Ra = 0.25
-Carga_3f = 300000000
-FP = 0.9
+Carga_3f = 100000000
+FP = 0.85
 
 print("\n\nA - Corrente de armadura:\n")
 P1f = Carga_3f/3
@@ -57,8 +57,5 @@ print("ns = ", ns,"RPM")
 ws = 2*math.pi*ns/60
 print("ws = ", ws,"rad/s")
 
-print("\n\nC - A potencia trifasica desenvolvida pelo gerador em watts:\n")
-print("\nFormula alternativa\n")
-pd = Vt.real*Ia_mod.real*FP
-print("pd por fase",pd.real,"W")
+
 
